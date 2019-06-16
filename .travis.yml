@@ -1,7 +1,17 @@
 language: node_js
 node_js:
-  - "stable"
+  - stable
 script:
   - npm install
   - npm test
   - npm run build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: "$githubToken"
+  local_dir: build
+  on:
+    branch: master
+env:
+  global:
+    secure: N54gix0B9J4byxP2gwrvp2wrb8ZLRXorfGyBa+TrDtwdBKuY+E307mkCHQOrJOYgqGcAb2s3QcG+yI+9tjw722bgqi/GRDiWsdu9emSe3rCYwqA0E0vl0i1Lv8MX6C90es89jMPOwTWGaAVubTG9KiWeyT1RvDNXpzZ1Zee26bRceNyrMS+eT7TXVzLhodQpOaRf9HqJrQ9YxlVVWWi8UEehc6n0uU3BmQs5S3Gs65mh7ZoHX8EpLvBiqaAxYoTMfKrkfacmPc2vnIxyWvGzIZKLdaMnMmL8HYH7mssCYhAVpDJut5UH85C+FNyT9bSo9/KQ6k3WUmNNuUuzYQVt0+b9CXXegYYAO99T3Zmh5psKkID/v3vVkpv4/mDQqxTMUDMN2VEEOMsnQA1GVNF7viFOHN9zvcdEMOvyle5e6inl7c7M5f8kf7Cf7sjec5b70m1f/rdEx9+DMZTm1J2aiyvG6+6NSqjEzEd8EhIhh5nRU8zJu+EeB55U8lXxvem2lQ53tXVsvZDybWuQvfo5oGUknJL8v7CCUHQLvQ4WBF7i73ASQ9bkGiwPTF+lPsnIqK2YT2jzYW4ejXDhQsSDx1ZBHQ/7TiZ34kKZfYqs48n/SicBTsgsXzsMyiylXekZBepcgYdEfBPtIzyBjP+3m/FZcq7F6MtrAtwgcZWx8tE=
